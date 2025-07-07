@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TAXTIC – Your Trusted Tax Buddy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>TAXTIC</h1>
+      <p class="tagline">Your trusted Tax Buddy</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Hassle-Free Tax & Compliance Solutions</h2>
+      <p>Expert help with GST, Business Registration, and Income Tax Planning – all in one place.</p>
+      <a href="#contact" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="card">
+          <h3>GST Registration & Filing</h3>
+          <p>Fast and reliable GST compliance solutions for your business.</p>
+        </div>
+        <div class="card">
+          <h3>Business Registration</h3>
+          <p>Start your business with the right legal structure and support.</p>
+        </div>
+        <div class="card">
+          <h3>Income Tax Planning</h3>
+          <p>Save smartly with professional tax planning and filing advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="whatsappForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <select id="service" required>
+          <option value="">-- Select a Service --</option>
+          <option value="GST Registration">GST Registration</option>
+          <option value="Business Registration">Business Registration</option>
+          <option value="Income Tax Planning">Income Tax Planning</option>
+        </select>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TAXTIC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+      const encodedMsg = `Name: ${name}%0AEmail: ${email}%0AService: ${service}%0AMessage: ${message}`;
+      const whatsappLink = `https://wa.me/919789485470?text=${encodedMsg}`;
+      window.open(whatsappLink, "_blank");
+    });
+  </script>
+</body>
+</html>
